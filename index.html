@@ -11,6 +11,7 @@
       font-family: 'Helvetica', sans-serif;
       text-align: center;
       margin-top: 50px;
+      image-rendering: pixelated; /* Initial pixelation */
     }
 
     #terminal {
@@ -127,6 +128,11 @@
       // Start the glitch effect from the first character
       updateText(0);
     }
+
+    // Restore normal definition on page load
+    window.onload = function () {
+      document.body.style.imageRendering = "auto";
+    };
   </script>
 </body>
 </html>
