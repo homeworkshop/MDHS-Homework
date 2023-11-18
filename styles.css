@@ -54,6 +54,7 @@ button.glitch-button { /* Apply glitch effect to the button */
   font-family: 'Helvetica', sans-serif;
   cursor: pointer;
   position: relative; /* Added for positioning ::before pseudo-element */
+border-radius: 5px; /* Add border-radius for rounded corners */
 }
 
 button.glitch-button:hover {
