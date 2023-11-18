@@ -15,7 +15,7 @@ function transformText(toUppercase, text) {
 
   if (isTransforming) return;
   isTransforming = true;
-  displayDiv.textContent = "";
+  displayDiv.innerHTML = ""; // Use innerHTML instead of textContent
 
   function updateText(index) {
     if (index < text.length) {
@@ -23,13 +23,13 @@ function transformText(toUppercase, text) {
       const transformedChar = toUppercase ? currentChar.toUpperCase() : currentChar.toLowerCase();
       const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
 
-      displayDiv.textContent += Math.random() < 0.5 ? transformedChar : randomSymbol;
+      displayDiv.innerHTML += Math.random() < 0.5 ? transformedChar : randomSymbol;
 
       setTimeout(() => {
         updateText(index + 1);
       }, 50);
     } else {
-      displayDiv.textContent = text;
+      displayDiv.innerHTML = text; // Use innerHTML instead of textContent
       isTransforming = false;
     }
   }
