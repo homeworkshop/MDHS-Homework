@@ -80,7 +80,7 @@ function displaySubjectText(selectedSubject) {
     case "physical-science":
     case "biology":
     case "world-history":
-      transformText(true, "Snap mdhs.homework with what you want done.");
+      transformText(true, "Snap mdhs.homework your requests.");
       break;
     default:
       transformText(true, "Unknown subject");
