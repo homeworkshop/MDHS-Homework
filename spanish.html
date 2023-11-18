@@ -3,91 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminal-style Scroll Animation</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      height: 200vh;
-      background-color: #000;
-      padding: 20px;
-      margin-top: 20px;
-      border: 2px solid #00ff00;
-      border-radius: 10px;
-    }
-
-    .content {
-      background-color: #000;
-      padding: 20px;
-      margin: 20px 0;
-      border: 1px solid #00ff00;
-      border-radius: 5px;
-    }
-
-    @keyframes scrollAnimation {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(10px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    .scroll-trigger {
-      cursor: pointer;
-      animation: scrollAnimation 2s infinite;
-      border: 1px solid #00ff00;
-      padding: 8px;
-      border-radius: 5px;
-      margin-top: 20px;
-      text-align: center;
-    }
-  </style>
+  <title>Spanish Work</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="content">
-      <h1>Welcome to the Scroll Animation Example</h1>
-      <p>This is some content in your page.</p>
+  <div id="terminal">
+    <p>Spanish (I)</p>
+    <div id="options">
+      <label for="subject">Subject:</label>
+      <select id="subject">
+        <option value="spanish">Spanish</option>
+        <option value="geometry">Geometry</option>
+        <option value="computer-science">Computer Science (1)</option>
+        <option value="english">English</option>
+        <option value="physical-science">Physical Science</option>
+        <option value="world-history">World History</option>
+      </select>
     </div>
-    
-    <div class="content">
-      <h2>Section 1</h2>
-      <p>This is another section in your page.</p>
-    </div>
-    
-    <div class="content">
-      <h2>Section 2</h2>
-      <p>This is yet another section in your page.</p>
-    </div>
-    
-    <div class="content">
-      <h2>Section 3</h2>
-      <p>Feel free to add more content...</p>
-    </div>
+    <button id="submitBtn">Submit</button>
   </div>
 
-  <div class="scroll-trigger">
-    Scroll Down
-  </div>
-
-  <script>
-    document.querySelector('.scroll-trigger').addEventListener('click', function() {
-      window.scrollBy({
-        top: window.innerHeight,
-        behavior: 'smooth'
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
