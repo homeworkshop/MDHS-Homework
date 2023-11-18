@@ -41,7 +41,7 @@ body {
 select,
 button.glitch-button { /* Apply glitch effect to the button */
   background-color: #000000;
-  color: #00ff00;
+  color: #dc143c;
   border: 1px solid #00ff00;
   padding: 5px;
   font-family: 'Helvetica', sans-serif;
@@ -56,7 +56,7 @@ button.glitch-button:hover {
 #displayText,
 button.glitch-button {
   margin-top: 20px;
-  color: #00ff00;
+  color: #dc143c;
   font-size: 18px;
   white-space: pre; /* Preserve white spaces */
   position: relative; /* Added for positioning ::before pseudo-element */
