@@ -4,6 +4,7 @@ body {
   font-family: 'Helvetica', sans-serif;
   text-align: center;
   margin-top: 50px;
+  transition: background-color 0.5s ease;
 }
 
 #terminal {
@@ -19,7 +20,7 @@ button {
   background-color: #000000;
   color: #00ff00;
   border: 1px solid #00ff00;
-  padding: 5px; /* Apply common styles to select and button */
+  padding: 5px;
   font-family: 'Helvetica', sans-serif;
   cursor: pointer;
 }
@@ -33,6 +34,13 @@ button {
 
 button:hover {
   text-transform: uppercase;
+}
+
+#displayText {
+  margin-top: 20px;
+  color: #00ff00;
+  font-size: 18px;
+  white-space: pre;
 }
 
 @keyframes glitch {
