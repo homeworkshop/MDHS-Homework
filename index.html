@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Shop Name</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Terminal-style Subject Selector</title>
 </head>
 <body>
-    <header>
-        <h1>Your Shop Name</h1>
-    </header>
+  <div id="terminal">
+    <p>Choose a subject:</p>
+    <div id="options">
+      <label for="subject">Subject:</label>
+      <select id="subject">
+        <option value="spanish">Spanish</option>
+        <option value="geometry">Geometry</option>
+        <option value="computer-science">Computer Science</option>
+        <option value="english">English</option>
+        <option value="physical-science">Physical Science</option>
+        <option value="world-history">World History</option>
+      </select>
+    </div>
+    <button onclick="submitSubject()">Submit</button>
+  </div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-    </nav>
-
-    <section>
-        <h2>Welcome to Your Shop</h2>
-        <p>Explore our wide range of products and find the perfect items for you.</p>
-    </section>
-
-    <footer>
-        &copy; 2023 Your Shop Name. All rights reserved.
-    </footer>
+  <script>
+    function submitSubject() {
+      var selectedSubject = document.getElementById("subject").value;
+      window.location.href = selectedSubject + ".html";
+    }
+  </script>
 </body>
 </html>
+
+    
