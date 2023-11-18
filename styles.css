@@ -64,7 +64,8 @@ button:hover {
   color: #00ff00;
   font-size: 18px;
   white-space: pre; /* Preserve white spaces */
-  animation: fadeInText 1s ease forwards; /* Fade-in animation for the display text */
+  animation: fadeInText 1s ease forwards, glitch 1s infinite; /* Combining fadeInText and glitch animations */
+  position: relative; /* Added for positioning ::before pseudo-element */
 }
 
 @keyframes fadeInText {
@@ -74,6 +75,16 @@ button:hover {
   to {
     opacity: 1;
   }
+}
+
+#displayText::before {
+  content: attr(data-text); /* Using the data-text attribute for content */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: glitch 1s infinite; /* Glitch effect applied to ::before pseudo-element */
 }
 
 @keyframes glitch {
