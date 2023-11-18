@@ -42,7 +42,7 @@ select,
 button.glitch-button { /* Apply glitch effect to the button */
   background-color: #000000;
   color: #dc143c;
-  border: 1px solid #00ff00;
+  border: 1px solid #dc143c;
   padding: 5px;
   font-family: 'Helvetica', sans-serif;
   cursor: pointer;
