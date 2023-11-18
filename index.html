@@ -4,63 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terminal-style Subject Selector</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Helvetica', sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    #terminal {
-      display: inline-block;
-    }
-
-    #options {
-      margin-top: 20px;
-    }
-
-    select,
-    button {
-      background-color: #000000;
-      color: #00ff00;
-      border: 1px solid #00ff00;
-      padding: 5px; /* Apply common styles to select and button */
-      font-family: 'Helvetica', sans-serif;
-      cursor: pointer;
-    }
-
-    button {
-      padding: 8px 16px;
-      margin-top: 20px;
-      text-transform: lowercase;
-      transition: text-transform 0.5s;
-    }
-
-    button:hover {
-      text-transform: uppercase;
-    }
-
-    @keyframes glitch {
-      0%, 20%, 100% {
-        transform: translate(0);
-        content: '';
-      }
-      10%, 30% {
-        transform: translate(-2px, 2px);
-        content: attr(data-text);
-      }
-      40%, 60% {
-        transform: translate(2px, -2px);
-        content: '';
-      }
-      70%, 90% {
-        transform: translate(-2px, 2px);
-        content: attr(data-text);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="terminal">
@@ -79,63 +23,6 @@
     <button id="submitBtn">Submit</button>
   </div>
 
-  <script>
-    var isTransforming = false;
-
-    function submitSubject() {
-      var selectedSubject = document.getElementById("subject").value;
-      window.location.href = selectedSubject + ".html";
-    }
-
-    function transformText(toUppercase) {
-      var button = document.getElementById('submitBtn');
-      var buttonText = button.innerText;
-      var symbols = "!@#$%^&*()_-+=[]{}|;:,.<>?";
-
-      // Check if transformation is already in progress
-      if (isTransforming) return;
-
-      isTransforming = true;
-
-      // Clear the button text
-      button.innerText = "";
-
-      // Create a function to update the button text with glitch effect
-      function updateText(index) {
-        if (index < buttonText.length) {
-          var currentChar = buttonText[index];
-          var transformedChar = toUppercase ? currentChar.toUpperCase() : currentChar.toLowerCase();
-          var randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-
-          // Apply glitch effect by randomly replacing characters with symbols
-          button.innerText += Math.random() < 0.5 ? transformedChar : randomSymbol;
-
-          setTimeout(function () {
-            updateText(index + 1);
-          }, 50); // Adjust the timeout for glitch speed
-        } else {
-          // After the glitch effect, set the final text to uppercase
-          button.innerText = buttonText.toUpperCase();
-          isTransforming = false; // Reset the flag
-        }
-      }
-
-      // Start the glitch effect from the first character
-      updateText(0);
-    }
-
-    // Attach event listeners using JavaScript
-    document.getElementById("submitBtn").addEventListener("click", function() {
-      submitSubject();
-    });
-
-    document.getElementById("submitBtn").addEventListener("mouseover", function() {
-      transformText(true);
-    });
-
-    document.getElementById("submitBtn").addEventListener("mouseout", function() {
-      transformText(false);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
