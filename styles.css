@@ -12,6 +12,7 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
+  transition: justify-content 1s ease;
 }
 
 @keyframes fadeIn {
