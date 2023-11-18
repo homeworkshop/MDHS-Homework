@@ -1,0 +1,47 @@
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  header {
+    text-align: center;
+    padding: 2em;
+    background-color: #333;
+    color: #fff;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+
+  main {
+    text-align: center;
+    padding: 2em;
+  }
+
+  /* Add your additional styling for the shop content */
+
+</style>
