@@ -1,5 +1,9 @@
 var isTransforming = false;
 
+document.getElementById("submitBtn").addEventListener("click", function () {
+  submitSubject();
+});
+
 function submitSubject() {
   var selectedSubject = document.getElementById("subject").value;
   displayLoading(selectedSubject);
@@ -9,66 +13,57 @@ function transformText(toUppercase, text) {
   var displayDiv = document.getElementById("displayText");
   var symbols = "!@#$%^&*()_-+=[]{}|;:,.<>?";
 
-  // Check if transformation is already in progress
   if (isTransforming) return;
-
   isTransforming = true;
+  displayDiv.textContent = "";
 
-  // Clear the display text
-  displayDiv.innerText = "";
-
-  // Create a function to update the display text with glitch effect
   function updateText(index) {
     if (index < text.length) {
       var currentChar = text[index];
       var transformedChar = toUppercase ? currentChar.toUpperCase() : currentChar.toLowerCase();
       var randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
 
-      // Apply glitch effect by randomly replacing characters with symbols
-      displayDiv.innerText += Math.random() < 0.5 ? transformedChar : randomSymbol;
+      displayDiv.textContent += Math.random() < 0.5 ? transformedChar : randomSymbol;
 
       setTimeout(function () {
         updateText(index + 1);
-      }, 50); // Adjust the timeout for glitch speed
+      }, 50);
     } else {
-      // After the glitch effect, set the final text
-      displayDiv.innerText = text;
-      isTransforming = false; // Reset the flag
+      displayDiv.textContent = text;
+      isTransforming = false;
     }
   }
 
-  // Start the glitch effect from the first character
   updateText(0);
 }
 
 function displayLoading(selectedSubject) {
   var displayDiv = document.getElementById("displayText");
   var loadingText = "Loading...";
-  var loadingSpeed = 100; // Adjust the speed of the typewriter effect
+  var loadingSpeed = 100;
 
-  // Clear the display text
-  displayDiv.innerText = "";
+  displayDiv.textContent = "";
 
-  // Create a function to update the display text with typewriter effect
   function updateLoading(index) {
     if (index < loadingText.length) {
-      displayDiv.innerText += loadingText[index];
+      displayDiv.textContent += loadingText[index];
 
       setTimeout(function () {
         updateLoading(index + 1);
       }, loadingSpeed);
     } else {
-      // After the typewriter effect, display the text specific to the subject
+      // Reset the isTransforming flag before calling displaySubjectText
+      isTransforming = false;
       displaySubjectText(selectedSubject);
     }
   }
 
-  // Start the typewriter effect from the first character
   updateLoading(0);
 }
 
 function displaySubjectText(selectedSubject) {
-  // Set content based on the selected subject
+  var displayDiv = document.getElementById("displayText");
+
   switch (selectedSubject) {
     case "spanish-1":
     case "spanish-2":
@@ -86,8 +81,3 @@ function displaySubjectText(selectedSubject) {
       transformText(true, "Unknown subject");
   }
 }
-
-// Attach event listeners using JavaScript
-document.getElementById("submitBtn").addEventListener("click", function() {
-  submitSubject();
-});
