@@ -66,16 +66,34 @@ function displaySubjectText(selectedSubject) {
 
   switch (selectedSubject) {
     case "spanish-1":
+      transformText(true, "Snap mdhs.homework your Spanish (1) requests.");
+      break;
     case "spanish-2":
+      transformText(true, "Snap mdhs.homework your Spanish (2) requests.");
+      break;
     case "algebra-1":
+      transformText(true, "Snap mdhs.homework your Algebra (1) requests.");
+      break;
     case "geometry":
+      transformText(true, "Snap mdhs.homework your Geometry requests.");
+      break;
     case "algebra-2":
+      transformText(true, "Snap mdhs.homework your Algebra (2) requests.");
+      break;
     case "computer-science":
+      transformText(true, "Snap mdhs.homework your Computer Science requests.");
+      break;
     case "english":
+      transformText(true, "Snap mdhs.homework your English requests.");
+      break;
     case "physical-science":
+      transformText(true, "Snap mdhs.homework your Physical Science requests.");
+      break;
     case "biology":
+      transformText(true, "Snap mdhs.homework your Biology requests.");
+      break;
     case "world-history":
-      transformText(true, "Snap mdhs.homework your requests.");
+      transformText(true, "Snap mdhs.homework your World History requests.");
       break;
     default:
       transformText(true, "Unknown subject");
