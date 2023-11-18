@@ -11,7 +11,6 @@
       font-family: 'Helvetica', sans-serif;
       text-align: center;
       margin-top: 50px;
-      image-rendering: pixelated; /* Initial pixelation */
     }
 
     #terminal {
@@ -22,22 +21,18 @@
       margin-top: 20px;
     }
 
-    select {
+    select,
+    button {
       background-color: #000000;
       color: #00ff00;
       border: 1px solid #00ff00;
-      padding: 5px;
+      padding: 5px; /* Apply common styles to select and button */
       font-family: 'Helvetica', sans-serif;
       cursor: pointer;
     }
 
     button {
-      background-color: #000000;
-      color: #00ff00;
-      border: 1px solid #00ff00;
       padding: 8px 16px;
-      font-family: 'Helvetica', sans-serif;
-      cursor: pointer;
       margin-top: 20px;
       text-transform: lowercase;
       transition: text-transform 0.5s;
@@ -81,7 +76,7 @@
         <option value="world-history">World History</option>
       </select>
     </div>
-    <button onmouseover="transformText(true)" onmouseout="transformText(false)" onclick="submitSubject()">Submit</button>
+    <button id="submitBtn">Submit</button>
   </div>
 
   <script>
@@ -93,7 +88,7 @@
     }
 
     function transformText(toUppercase) {
-      var button = document.querySelector('button');
+      var button = document.getElementById('submitBtn');
       var buttonText = button.innerText;
       var symbols = "!@#$%^&*()_-+=[]{}|;:,.<>?";
 
@@ -129,10 +124,18 @@
       updateText(0);
     }
 
-    // Restore normal definition on page load
-    window.onload = function () {
-      document.body.style.imageRendering = "auto";
-    };
+    // Attach event listeners using JavaScript
+    document.getElementById("submitBtn").addEventListener("click", function() {
+      submitSubject();
+    });
+
+    document.getElementById("submitBtn").addEventListener("mouseover", function() {
+      transformText(true);
+    });
+
+    document.getElementById("submitBtn").addEventListener("mouseout", function() {
+      transformText(false);
+    });
   </script>
 </body>
 </html>
