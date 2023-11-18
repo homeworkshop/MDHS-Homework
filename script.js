@@ -11,7 +11,7 @@ function submitSubject() {
 
 function transformText(toUppercase, text) {
   var displayDiv = document.getElementById("displayText");
-  var symbols = "!@#$%^&*()_-+=[]{}|;:,.<>?";
+  var symbols = "!@#$%^&*()_-+=[]{}|;:,.<>?"1234567890;
 
   if (isTransforming) return;
   isTransforming = true;
