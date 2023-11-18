@@ -15,10 +15,6 @@ body {
   transition: justify-content 1s ease;
   font-size: 16px; /* Set a base font size */
 }
-@media (min-width: 600px) {
-  body {
-    font-size: 48px; /* Increase font size for larger screens */
-  }
 
 @keyframes fadeIn {
   from {
@@ -55,9 +51,9 @@ button.glitch-button { /* Apply glitch effect to the button */
   background-color: #000000;
   color: #dc143c;
   border: 1px solid #dc143c;
-  padding: 15px;
+ 
   font-family: 'Helvetica', sans-serif;
-  font-size: 48px;
+  font-size: 26px;
   cursor: pointer;
   position: relative; /* Added for positioning ::before pseudo-element */
 border-radius: 5px; /* Add border-radius for rounded corners */
@@ -71,8 +67,8 @@ button.glitch-button:hover {
 button.glitch-button {
   margin-top: 20px;
   color: #dc143c;
-  padding: 15px; /* Increase padding for larger buttons */
-  font-size: 24px; /* Increase font size for larger buttons */
+
+  font-size: 18px; /* Increase font size for larger buttons */
   white-space: pre; /* Preserve white spaces */
   position: relative; /* Added for positioning ::before pseudo-element */
 }
