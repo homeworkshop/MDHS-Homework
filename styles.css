@@ -39,27 +39,22 @@ body {
 }
 
 select,
-button {
+button.glitch-button { /* Apply glitch effect to the button */
   background-color: #000000;
   color: #00ff00;
   border: 1px solid #00ff00;
   padding: 5px;
   font-family: 'Helvetica', sans-serif;
   cursor: pointer;
+  position: relative; /* Added for positioning ::before pseudo-element */
 }
 
-button {
-  padding: 8px 16px;
-  margin-top: 20px;
-  text-transform: lowercase;
-  transition: text-transform 0.5s;
-}
-
-button:hover {
+button.glitch-button:hover {
   text-transform: uppercase;
 }
 
-#displayText {
+#displayText,
+button.glitch-button {
   margin-top: 20px;
   color: #00ff00;
   font-size: 18px;
@@ -67,7 +62,8 @@ button:hover {
   position: relative; /* Added for positioning ::before pseudo-element */
 }
 
-#displayText::before {
+#displayText::before,
+button.glitch-button::before { /* Apply glitch effect to ::before pseudo-element */
   content: attr(data-text); /* Using the data-text attribute for content */
   position: absolute;
   top: 0;
@@ -81,10 +77,10 @@ button:hover {
   0%, 100% {
     transform: translate(0);
   }
-  20%, 30%, 40%, 60%, 80% {
+  10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
     transform: translate(-2px, 2px);
   }
-  50%, 70%, 90% {
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
     transform: translate(2px, -2px);
   }
 }
