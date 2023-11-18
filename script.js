@@ -71,22 +71,22 @@ function displaySubjectText(selectedSubject) {
   // Set content based on the selected subject
   switch (selectedSubject) {
     case "spanish":
-      transformText(true, "Snap mdhs.homework with what you want done.");
+      transformText(true, "Snap mdhs.homework your requests.");
       break;
     case "geometry":
-      transformText(true, "Snap mdhs.homework with what you want done.");
+      transformText(true, "Snap mdhs.homework your requests.");
       break;
     case "computer-science":
-      transformText(true, "Snap mdhs.homework with what you want done.");
+      transformText(true, "Snap mdhs.homework your requests.");
       break;
     case "english":
-      transformText(true, "Snap mdhs.homework with what you want done.");
+      transformText(true, "Snap mdhs.homework your requests.");
       break;
     case "physical-science":
-      transformText(true, "Snap mdhs.homework with what you want done.");
+      transformText(true, "Snap mdhs.homework your requests.");
       break;
     case "world-history":
-      transformText(true, "Snap mdhs.homework with what you want done.");
+      transformText(true, "Snap mdhs.homework your requests.");
       break;
     default:
       transformText(true, "Unknown subject");
