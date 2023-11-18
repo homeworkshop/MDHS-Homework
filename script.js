@@ -15,7 +15,7 @@ function transformText(toUppercase, text) {
 
   if (isTransforming) return;
   isTransforming = true;
-  displayDiv.innerHTML = ""; // Use innerHTML instead of textContent
+  displayDiv.innerHTML = "";
 
   function updateText(index) {
     if (index < text.length) {
@@ -29,12 +29,40 @@ function transformText(toUppercase, text) {
         updateText(index + 1);
       }, 50);
     } else {
-      displayDiv.innerHTML = text; // Use innerHTML instead of textContent
+      displayDiv.innerHTML = text;
       isTransforming = false;
+
+      // After 10 seconds, clear the text in glitch fashion
+      setTimeout(() => {
+        glitchClearText();
+      }, 10000);
     }
   }
 
   updateText(0);
+}
+
+function glitchClearText() {
+  const displayDiv = document.getElementById("displayText");
+  const symbols = "!@#$%^&*()_-+=[]{}|;:,.<>?";
+
+  function updateGlitch(index) {
+    if (index < displayDiv.innerHTML.length) {
+      const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+
+      displayDiv.innerHTML = displayDiv.innerHTML.substring(0, index) +
+        (Math.random() < 0.5 ? randomSymbol : ' ') +
+        displayDiv.innerHTML.substring(index + 1);
+
+      setTimeout(() => {
+        updateGlitch(index + 1);
+      }, 50);
+    } else {
+      isTransforming = false;
+    }
+  }
+
+  updateGlitch(0);
 }
 
 function displayLoading(selectedSubject) {
@@ -78,4 +106,9 @@ function displaySubjectText(selectedSubject) {
     default:
       transformText(true, "Unknown subject");
   }
+
+  // After 10 seconds, clear the text in glitch fashion
+  setTimeout(() => {
+    transformText(true, "");
+  }, 10000);
 }
