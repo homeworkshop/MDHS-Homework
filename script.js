@@ -1,6 +1,6 @@
-let isTransforming = false; // Declare isTransforming
+let isTransforming = false;
 
-document.getElementById("submitBtn").addEventListener("click", function () {
+document.getElementById("glitch-button").addEventListener("click", function () {
   submitSubject();
 });
 
