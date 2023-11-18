@@ -59,7 +59,7 @@ function glitchClearText() {
       }, 50);
     } else {
       isTransforming = false;
-      
+
       // After glitch effect, transition body back to center vertically
       document.body.style.justifyContent = "center";
     }
